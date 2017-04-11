@@ -1,0 +1,10 @@
+/FunctionalRecovery.VC.db
+/MyScanning.VC.db
+
+Reconstruction/a
+/data/frame/*.depth
+/data/frame/*.info
+/data/frame/*.png
+/data/frame/*.timestamp
+/Reconstruction/x64
+/FunctionalRecovery/x64

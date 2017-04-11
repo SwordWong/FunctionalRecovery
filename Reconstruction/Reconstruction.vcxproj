@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{75FBA8E1-4538-45F3-8305-83D81604F79B}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 8.0.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)\viewers;$(SolutionDir)\algorithm\Renderable;$(SolutionDir)\algorithm\mpu;$(SolutionDir)\algorithm\meshIK;$(SolutionDir)\algorithm\ldpMat;$(SolutionDir)\algorithm\kdtree;$(SolutionDir)\algorithm\FreeImage;$(SolutionDir)\algorithm\freeglut;$(SolutionDir)\algorithm\eigen;$(SolutionDir)\algorithm\KinectFusion\VoxelHash;$(SolutionDir)\algorithm\KinectFusion\glsl;$(SolutionDir)\algorithm\KinectFusion\dualquaternion;$(SolutionDir)\algorithm\KinectFusion\cudpp\moderngpu\include;$(SolutionDir)\algorithm\KinectFusion\cudpp;$(SolutionDir)\algorithm\KinectFusion;$(SolutionDir)\algorithm\camera;$(SolutionDir)\algorithm\BFGS;$(SolutionDir)\algorithm;$(QT5_VS2013)\include;$(KINECTSDK10_DIR)\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\algorithm\freeglut;$(SolutionDir)\algorithm\FreeImage;$(SolutionDir)\GL\lib\x64;$(KINECTSDK10_DIR)\lib\amd64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)\viewers;$(SolutionDir)\algorithm\Renderable;$(SolutionDir)\algorithm\mpu;$(SolutionDir)\algorithm\meshIK;$(SolutionDir)\algorithm\ldpMat;$(SolutionDir)\algorithm\kdtree;$(SolutionDir)\algorithm\FreeImage;$(SolutionDir)\algorithm\freeglut;$(SolutionDir)\algorithm\eigen;$(SolutionDir)\algorithm\KinectFusion\VoxelHash;$(SolutionDir)\algorithm\KinectFusion\glsl;$(SolutionDir)\algorithm\KinectFusion\dualquaternion;$(SolutionDir)\algorithm\KinectFusion\cudpp\moderngpu\include;$(SolutionDir)\algorithm\KinectFusion\cudpp;$(SolutionDir)\algorithm\KinectFusion;$(SolutionDir)\algorithm\camera;$(SolutionDir)\algorithm\BFGS;$(SolutionDir)\algorithm;$(QT5_VS2013)\include;$(KINECTSDK10_DIR)\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\algorithm\freeglut;$(SolutionDir)\algorithm\FreeImage;$(SolutionDir)\GL\lib\x64;$(KINECTSDK10_DIR)\lib\amd64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5OpenGLd.lib;opengl32.lib;glu32.lib;Qt5Widgetsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5OpenGLd.lib;opengl32.lib;glu32.lib;Qt5Widgetsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CudaCompile>
+      <CodeGeneration>compute_30,sm_30</CodeGeneration>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5OpenGL.lib;opengl32.lib;glu32.lib;Qt5Widgets.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5OpenGL.lib;opengl32.lib;glu32.lib;Qt5Widgets.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CudaCompile>
+      <CodeGeneration>compute_30,sm_30</CodeGeneration>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\algorithm\camera\Camera.cpp" />
+    <ClCompile Include="..\algorithm\FreeImage\CFreeImage.cpp" />
+    <ClCompile Include="..\algorithm\kdtree\AABB.cpp" />
+    <ClCompile Include="..\algorithm\kdtree\KdTree.cpp" />
+    <ClCompile Include="..\algorithm\kdtree\Primitive.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\CudaBsrMatrix.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\CudaCholeSkeySolver.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\CudaDiagBlockMatrix.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\CudaUtil.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\cudpp\moderngpu\src\mgpuutil.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\cudpp\moderngpu\src\mmio.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\cudpp\moderngpu\src\sparsematrix.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\device_memory.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\DynamicFusionParam.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\glsl\glsl.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\glsl\glslprogram.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\GpuGaussNewtonSolver.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\GpuKdTree.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\GpuMesh.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\KinectFusionProcessor.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\kinect_util.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\MarchingCubes.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\MicrosoftKinect.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\RayCaster.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\SparseVolume.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\TsdfVolume.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\WarpField.cpp" />
+    <ClCompile Include="..\algorithm\meshAlignByMarker.cpp" />
+    <ClCompile Include="..\algorithm\mpu\Convolution_Helper.cpp" />
+    <ClCompile Include="..\algorithm\mpu\MarchingCube.cpp" />
+    <ClCompile Include="..\algorithm\mpu\VolumeData.cpp" />
+    <ClCompile Include="..\algorithm\Renderable\AbstractMesh.cpp" />
+    <ClCompile Include="..\algorithm\Renderable\bmesh.cpp" />
+    <ClCompile Include="..\algorithm\Renderable\BoneMesh.cpp" />
+    <ClCompile Include="..\algorithm\Renderable\GLNode.cpp" />
+    <ClCompile Include="..\algorithm\Renderable\ObjMesh.cpp" />
+    <ClCompile Include="..\algorithm\RenderedMesh.cpp" />
+    <ClCompile Include="..\algorithm\RigidEstimation.cpp" />
+    <ClCompile Include="..\algorithm\util.cpp" />
+    <ClCompile Include="DepthViewer.cpp" />
+    <ClCompile Include="GeneratedFiles\Debug\moc_DepthViewer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_RayCastViewer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_reconstruction.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_reconstruction.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_DepthViewer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_RayCastViewer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_reconstruction.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="meshlabScript.cpp" />
+    <ClCompile Include="RayCastViewer.cpp" />
+    <ClCompile Include="reconstruction.cpp" />
+    <ClCompile Include="ReconstructionDataHolder.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="reconstruction.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing reconstruction.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing reconstruction.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing reconstruction.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing reconstruction.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets"</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="reconstruction.ui">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\algorithm\camera\Camera.h" />
+    <ClInclude Include="..\algorithm\camera\fmath.h" />
+    <ClInclude Include="..\algorithm\DynamicFusion\GpuMapC2D.h" />
+    <ClInclude Include="..\algorithm\FrameInfo.h" />
+    <ClInclude Include="..\algorithm\FreeImage\CFreeImage.h" />
+    <ClInclude Include="..\algorithm\FreeImage\FreeImage.h" />
+    <ClInclude Include="..\algorithm\getLargestLinkedSubmesh.h" />
+    <ClInclude Include="..\algorithm\global_param.h" />
+    <ClInclude Include="..\algorithm\kdtree\AABB.h" />
+    <ClInclude Include="..\algorithm\kdtree\BSphere.h" />
+    <ClInclude Include="..\algorithm\kdtree\common.h" />
+    <ClInclude Include="..\algorithm\kdtree\KdTree.h" />
+    <ClInclude Include="..\algorithm\kdtree\nanoflann.hpp" />
+    <ClInclude Include="..\algorithm\kdtree\PointTree.h" />
+    <ClInclude Include="..\algorithm\kdtree\Primitive.h" />
+    <ClInclude Include="..\algorithm\kdtree\Ray.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\BlendColorMap.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\CudaBsrMatrix.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\CudaCholeskeySolver.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\CudaDiagBlockMatrix.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\cuda_utils.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\ModerGpuWrapper.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\ctaloadbalance.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\ctamerge.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\ctascan.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\ctasearch.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\ctasegreduce.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\ctasegscan.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\ctasegsort.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\ctasortedsearch.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\devicetypes.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\deviceutil.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\intrinsics.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\launchbox.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\loadstore.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\serialsets.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\device\sortnetwork.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\bulkinsert.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\bulkremove.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\csrtools.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\cubradixsort.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\intervalmove.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\join.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\loadbalance.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\localitysort.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\merge.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\mergesort.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\reduce.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\reducebykey.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\scan.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\search.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\segmentedsort.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\segreduce.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\segreducecsr.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\sets.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\sortedsearch.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\kernels\spmvcsr.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\mgpudevice.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\mgpuenums.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\mgpuhost.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\mmio.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\moderngpu.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\sparsematrix.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\util\format.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\util\mgpualloc.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\util\mgpucontext.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\util\static.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\moderngpu\include\util\util.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\cudpp\thrust_wrapper.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\definations.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\device_array.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\device_memory.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\device_utils.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\dualquaternion\dual_quat_cu.hpp" />
+    <ClInclude Include="..\algorithm\KinectFusion\dualquaternion\mat3.hpp" />
+    <ClInclude Include="..\algorithm\KinectFusion\dualquaternion\point3.hpp" />
+    <ClInclude Include="..\algorithm\KinectFusion\dualquaternion\quat_cu.hpp" />
+    <ClInclude Include="..\algorithm\KinectFusion\dualquaternion\transfo.hpp" />
+    <ClInclude Include="..\algorithm\KinectFusion\dualquaternion\vec3.hpp" />
+    <ClInclude Include="..\algorithm\KinectFusion\DynamicFusionParam.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\glsl\glsl.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\glsl\glslprogram.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\GpuCholeSky.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\GpuGaussNewtonSolver.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\GpuHeap.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\GpuKdTree.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\GpuMapC2D.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\GpuMesh.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\GPU_MapC2D.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\helper_math.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\kernel_containers.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\KinectFusionProcessor.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\kinect_util.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\MarchingCubes.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\MicrosoftKinect.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\RayCaster.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\SparseVolume.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\TsdfVolume.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\VoxelHash\chunk.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\VoxelHash\voxel_block_hash_table.cuh" />
+    <ClInclude Include="..\algorithm\KinectFusion\VoxelHash\voxel_hashing_device.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\VoxelHash\voxel_hashing_internal.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\WarpField.h" />
+    <ClInclude Include="..\algorithm\ldpMat\half.hpp" />
+    <ClInclude Include="..\algorithm\ldpMat\ldpdef.h" />
+    <ClInclude Include="..\algorithm\ldpMat\ldp_basic_mat.h" />
+    <ClInclude Include="..\algorithm\ldpMat\ldp_basic_vec.h" />
+    <ClInclude Include="..\algorithm\ldpMat\Quaternion.h" />
+    <ClInclude Include="..\algorithm\LMSolver.h" />
+    <ClInclude Include="..\algorithm\meshAlignByMarker.h" />
+    <ClInclude Include="..\algorithm\mpu\Convolution_Helper.h" />
+    <ClInclude Include="..\algorithm\mpu\MarchingCube.h" />
+    <ClInclude Include="..\algorithm\mpu\VolumeData.h" />
+    <ClInclude Include="..\algorithm\RemoveDuplicateVertex.h" />
+    <ClInclude Include="..\algorithm\Renderable\AbstractMesh.h" />
+    <ClInclude Include="..\algorithm\Renderable\bmesh.h" />
+    <ClInclude Include="..\algorithm\Renderable\bmesh_private.h" />
+    <ClInclude Include="..\algorithm\Renderable\BoneMesh.h" />
+    <ClInclude Include="..\algorithm\Renderable\Error.h" />
+    <ClInclude Include="..\algorithm\Renderable\GLNode.h" />
+    <ClInclude Include="..\algorithm\Renderable\ObjMesh.h" />
+    <ClInclude Include="..\algorithm\Renderable\Renderable.h" />
+    <ClInclude Include="..\algorithm\RenderedMesh.h" />
+    <ClInclude Include="..\algorithm\RigidEstimation.h" />
+    <ClInclude Include="..\algorithm\util.h" />
+    <ClInclude Include="ReconstructionDataHolder.h" />
+    <CustomBuild Include="RayCastViewer.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing RayCastViewer.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing RayCastViewer.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing RayCastViewer.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing RayCastViewer.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets"</Command>
+    </CustomBuild>
+    <CustomBuild Include="DepthViewer.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing DepthViewer.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing DepthViewer.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing DepthViewer.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing DepthViewer.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets"</Command>
+    </CustomBuild>
+    <ClInclude Include="GeneratedFiles\ui_reconstruction.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="reconstruction.qrc">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\algorithm\KinectFusion\BlendColorMap.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\CudaBsrMatrix.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\CudaCholeskeySolver.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\CudaDiagBlockMatrix.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\cudpp\ModerGpuWrapper.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\cudpp\moderngpu\src\mgpucontext.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\cudpp\thrust_wrapper.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\GpuCholesky.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\GpuGaussNewtonSolver.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\GpuKdTree.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\GpuMapC2D.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\GpuMesh.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\KinectFusionProcessor.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\kinect_util.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\MarchingCubes.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\RayCaster.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\SparseVolume.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\TsdfVolume.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\VoxelHash\voxel_block_allocation.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\VoxelHash\voxel_block_selection.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\VoxelHash\voxel_block_streaming.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\VoxelHash\voxel_block_update.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\VoxelHash\voxel_hashing_utils.cu" />
+    <CudaCompile Include="..\algorithm\KinectFusion\WarpField.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Activity5.nvact" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 8.0.targets" />
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_x64="Qt5.7.0_vs2013" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -8,3 +8,7 @@ Reconstruction/a
 /data/frame/*.timestamp
 /Reconstruction/x64
 /FunctionalRecovery/x64
+*.pdb
+/Reconstruction/GeneratedFiles
+/FunctionalRecovery/GeneratedFiles
+*.exe

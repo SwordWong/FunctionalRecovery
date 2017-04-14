@@ -1,15 +1,16 @@
 #include "ScanningDataHold.h"
 #include <fstream>
-
+#include <Eigen/Dense>
+//#include "Depth2PointCloud.h"
 #define PI 3.141592653589793f
 ScanningDataHolder scanning_data_holder;
 ScanningDataHolder::ScanningDataHolder()
 {
-	m_kinect = new Microsoft_Kinect;
+
 }
 ScanningDataHolder::~ScanningDataHolder()
 {
-	delete m_kinect;
+
 }
 void ScanningDataHolder::saveDepth(const std::vector<dfusion::depthtype>& depth_h, std::string filename)
 {
@@ -47,7 +48,7 @@ void ScanningDataHolder::RGBA2QImage(const std::vector<dfusion::PixelRGBA>& colo
 void ScanningDataHolder::init()
 {
 	
-	m_kinect->InitKinect();
+	m_kinect.InitKinect();
 	
 	const float	f = dfusion::KINECT_HEIGHT* 0.5f / tanf(KINECT_DEPTH_V_FOV * PI / 180.0f * 0.5f);
 	intr = dfusion::Intr(f, f, (1 + dfusion::KINECT_WIDTH) / 2, dfusion::KINECT_HEIGHT / 2);
@@ -61,7 +62,7 @@ void ScanningDataHolder::init()
 
 void ScanningDataHolder::getFrame()
 {
-	m_kinect->GetDepthColorIntoBuffer(m_depth.data(), (uchar*)m_color.data(),false, true);
+	m_kinect.GetDepthColorIntoBuffer(m_depth.data(), (uchar*)m_color.data(), true);
 	RGBA2QImage(m_color, m_color_qimage);
 }
 
@@ -95,7 +96,7 @@ void ScanningDataHolder::getNormalShowImage()
 		{
 			int i_pixel = y*m_normal_show_image.width() + x;
 			QRgb c;
-			if (!isnan(nmap[i_pixel])) {
+			if (!isnan(nmap[i_pixel].x())) {
 				c = qRgba(0, 0, 0, 0);
 			}
 			else {
@@ -110,7 +111,7 @@ void ScanningDataHolder::getNormalShowImage()
 		}
 }
 
-void ScanningDataHolder::calVMAP(std::vector<dfusion::depthtype>& depth_map, std::vector<Eigen::Vector3d>& vmap)
+void ScanningDataHolder::calVMAP(std::vector< dfusion::depthtype> &depth_map, std::vector<Eigen::Vector3d> &vmap)
 {
 	int index;
 	vmap.resize(dfusion::KINECT_WIDTH* dfusion::KINECT_HEIGHT);

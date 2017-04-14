@@ -33,12 +33,6 @@
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
-    <Filter Include="algorithm">
-      <UniqueIdentifier>{f8071fb7-41a2-4dd6-9af3-038061d35bf5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="algorithm\KinectFusion">
-      <UniqueIdentifier>{adf5a0fe-104f-4032-aff1-7305c3a045c3}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -56,10 +50,10 @@
     <ClCompile Include="GeneratedFiles\qrc_scanning.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\algorithm\KinectFusion\MicrosoftKinect.cpp">
-      <Filter>algorithm\KinectFusion</Filter>
-    </ClCompile>
     <ClCompile Include="ScanningDataHold.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Kinect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -78,19 +72,11 @@
     <ClInclude Include="GeneratedFiles\ui_scanning.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\algorithm\KinectFusion\GpuMapC2D.h">
-      <Filter>algorithm\KinectFusion</Filter>
-    </ClInclude>
-    <ClInclude Include="..\algorithm\KinectFusion\MicrosoftKinect.h">
-      <Filter>algorithm\KinectFusion</Filter>
-    </ClInclude>
     <ClInclude Include="ScanningDataHold.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <CudaCompile Include="..\algorithm\KinectFusion\GpuMapC2D.cu">
-      <Filter>algorithm\KinectFusion</Filter>
-    </CudaCompile>
+    <ClInclude Include="Kinect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -173,6 +173,6 @@ void Scanning::timerEvent(QTimerEvent * ev)
 		scanning_data_holder.getDepthShowImage();
 		//scanning_data_holder.getNormalShowImage();
 		ui.label_color->setPixmap(QPixmap::fromImage(scanning_data_holder.m_color_qimage));
-		//ui.label_normal->setPixmap(QPixmap::fromImage(scanning_data_holder.m_normal_show_image));
+		ui.label_normal->setPixmap(QPixmap::fromImage(scanning_data_holder.m_depth_show_image));
 	}
 }

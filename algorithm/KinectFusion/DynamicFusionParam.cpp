@@ -88,7 +88,7 @@ namespace dfusion
 		fusion_enable_rigidSolver = true;
 		fusion_post_rigid_factor = false;
 		fusion_dumping_max_frame = 8000;
-		mirror_input = false;
+		mirror_input = true;
 		load_frameIndx_plus_num = 1;
 		solver_enable_nan_check = false;
 		graph_single_level = true;

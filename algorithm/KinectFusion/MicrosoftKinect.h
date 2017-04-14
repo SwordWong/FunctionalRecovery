@@ -13,12 +13,13 @@
 #include <iostream>
 #include <string>
 #include <windows.h>
-#include <math.h>
+
 #include <vector>
 #include <set>
 //#include <hash_set>
 #include <unordered_set>
 #include "definations.h"
+#include <math.h>
 #ifndef ENABLE_KINECT_20
 #define ENABLE_KINECT_10
 #endif

@@ -13,3 +13,8 @@ Reconstruction/a
 /FunctionalRecovery/GeneratedFiles
 *.exe
 .vs/FunctionalRecovery/v14/.suo
+data/frame/_param.param.txt
+*.obj
+/Scanning/Resources
+/Scanning/x64
+x64/Debug/Scanning.ilk

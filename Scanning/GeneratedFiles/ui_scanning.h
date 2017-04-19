@@ -17,6 +17,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -29,6 +30,8 @@ public:
     QWidget *centralWidget;
     QLabel *label_color;
     QLabel *label_normal;
+    QPushButton *pb_recording;
+    QPushButton *pb_finish;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -48,6 +51,12 @@ public:
         label_normal->setObjectName(QStringLiteral("label_normal"));
         label_normal->setGeometry(QRect(640, 0, 640, 480));
         label_normal->setAutoFillBackground(true);
+        pb_recording = new QPushButton(centralWidget);
+        pb_recording->setObjectName(QStringLiteral("pb_recording"));
+        pb_recording->setGeometry(QRect(20, 520, 75, 23));
+        pb_finish = new QPushButton(centralWidget);
+        pb_finish->setObjectName(QStringLiteral("pb_finish"));
+        pb_finish->setGeometry(QRect(150, 520, 75, 23));
         ScanningClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ScanningClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -70,6 +79,8 @@ public:
         ScanningClass->setWindowTitle(QApplication::translate("ScanningClass", "Scanning", 0));
         label_color->setText(QString());
         label_normal->setText(QString());
+        pb_recording->setText(QApplication::translate("ScanningClass", "Recording", 0));
+        pb_finish->setText(QApplication::translate("ScanningClass", "Finish", 0));
     } // retranslateUi
 
 };

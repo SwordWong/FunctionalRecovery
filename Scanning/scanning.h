@@ -12,9 +12,19 @@ public:
 	Scanning(QWidget *parent = 0);
 	~Scanning();
 
-	void timerEvent(QTimerEvent* ev);
+	void timerEvent(QTimerEvent* ev);	
+	void reset();
+	
+public slots:
+	void clicked_pb_recording();
+	void clicked_pb_finish();
+protected:
+	void saving();
+	void connectEvent();
 private:
 	Ui::ScanningClass ui;
+
+	bool flag_saving = false;
 
 	QString m_currentPath;
 	int m_fpsTimerId;

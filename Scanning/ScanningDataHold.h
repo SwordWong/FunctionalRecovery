@@ -31,5 +31,10 @@ public:
 	QImage m_color_qimage;
 	QImage m_depth_show_image;
 	QImage m_normal_show_image;
+
+	dfusion::DepthMap depth_map_d;
+	dfusion::MapArr vmap_d;
+	dfusion::MapArr nmap_d;
+	dfusion::ColorMap color_map_d;
 };
 extern ScanningDataHolder scanning_data_holder;

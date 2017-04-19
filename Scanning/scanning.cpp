@@ -8,9 +8,9 @@
 #include <QThread>
 #include <QPixmap>
 #include "definations.h"
-
+#include "../algorithm/util.h"
 #include "ScanningDataHold.h"
-
+#include "ldpdef.h"
 bool removeFolderContent(const QString &folderDir)
 {
 	QDir dir(folderDir);
@@ -76,6 +76,8 @@ public:
 		QMutexLocker locker(g_mutex);
 		m_currentPath = path;
 		QDir dir(m_currentPath);
+		if (!dir.exists())
+			ldp::mkdir(m_currentPath.toStdString());
 	}
 	void push_depth(const std::vector<dfusion::depthtype>& depth,
 		const QImage& color, int id
@@ -149,7 +151,7 @@ Scanning::Scanning(QWidget *parent)
 	ui.setupUi(this);
 	m_frameIndex = 0;
 	m_currentPath = "../data/frame/Scanning";
-
+	connectEvent();
 	scanning_data_holder.init();
 	m_fpsTimerId = startTimer(30);
 	g_mutex = new QMutex();
@@ -167,12 +169,54 @@ Scanning::~Scanning()
 
 void Scanning::timerEvent(QTimerEvent * ev)
 {
+	static gtime_t time_now;
+	static gtime_t time_last = ldp::gtime_now();
 	if (m_fpsTimerId == ev->timerId())
 	{
 		scanning_data_holder.getFrame();
 		scanning_data_holder.getDepthShowImage();
-		//scanning_data_holder.getNormalShowImage();
+		scanning_data_holder.getNormalShowImage();
 		ui.label_color->setPixmap(QPixmap::fromImage(scanning_data_holder.m_color_qimage));
-		ui.label_normal->setPixmap(QPixmap::fromImage(scanning_data_holder.m_depth_show_image));
+		ui.label_normal->setPixmap(QPixmap::fromImage(scanning_data_holder.m_normal_show_image));
+		if (flag_saving)
+			saving();
+		time_now = ldp::gtime_now();
+		double sec = ldp::gtime_seconds(time_last, time_now);
+		double fps = 1.0 / sec;
+		setWindowTitle(QString().sprintf("[%d] FPS:%.1f", m_frameIndex, fps));
+		time_last = time_now;
 	}
+}
+
+void Scanning::saving()
+{
+	g_saveThread.push_depth(
+		scanning_data_holder.m_depth,
+		scanning_data_holder.m_color_qimage, 
+		m_frameIndex++);
+}
+void Scanning::connectEvent()
+{
+	connect(ui.pb_recording, SIGNAL(clicked()), this, SLOT(clicked_pb_recording()));
+	connect(ui.pb_finish, SIGNAL(clicked()), this, SLOT(clicked_pb_finish()));
+}
+void Scanning::reset()
+{
+	{
+		QMutexLocker locker(g_mutex_clear);
+		g_saveThread.clear_data();
+		std::cout << "clear save list" << std::endl;
+		removeFolderContent(m_currentPath);
+		std::cout << "remove files" << std::endl;
+	}
+	m_frameIndex = 0;
+}
+void Scanning::clicked_pb_finish()
+{
+	flag_saving = false;
+}
+void Scanning::clicked_pb_recording() 
+{
+	reset();
+	flag_saving = true;
 }

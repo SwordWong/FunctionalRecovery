@@ -1,6 +1,8 @@
 #include "ScanningDataHold.h"
 #include <fstream>
 #include <Eigen/Dense>
+#include <QByteArray>
+#include "kinect_util.h"
 //#include "Depth2PointCloud.h"
 #define PI 3.141592653589793f
 ScanningDataHolder scanning_data_holder;
@@ -10,7 +12,10 @@ ScanningDataHolder::ScanningDataHolder()
 }
 ScanningDataHolder::~ScanningDataHolder()
 {
-
+	depth_map_d.release();
+	nmap_d.release();
+	vmap_d.release();
+	color_map_d.release();
 }
 void ScanningDataHolder::saveDepth(const std::vector<dfusion::depthtype>& depth_h, std::string filename)
 {
@@ -58,6 +63,10 @@ void ScanningDataHolder::init()
 	m_color_qimage = QImage(dfusion::KINECT_WIDTH, dfusion::KINECT_HEIGHT, QImage::Format_RGBA8888);
 	m_depth_show_image = QImage(dfusion::KINECT_WIDTH, dfusion::KINECT_HEIGHT, QImage::Format_RGBA8888);
 	m_normal_show_image = QImage(dfusion::KINECT_WIDTH, dfusion::KINECT_HEIGHT, QImage::Format_RGBA8888);
+
+
+	depth_map_d.create(dfusion::KINECT_HEIGHT, dfusion::KINECT_WIDTH);
+	color_map_d.create(dfusion::KINECT_HEIGHT, dfusion::KINECT_WIDTH);
 }
 
 void ScanningDataHolder::getFrame()
@@ -68,6 +77,9 @@ void ScanningDataHolder::getFrame()
 
 void ScanningDataHolder::getDepthShowImage()
 {
+
+	
+	
 	int min_depth = 300;
 	int max_depth = 3000;
 	for (int y = 0; y < m_depth_show_image.height(); y++)
@@ -87,7 +99,40 @@ void ScanningDataHolder::getDepthShowImage()
 
 void ScanningDataHolder::getNormalShowImage()
 {
-	std::vector<Eigen::Vector3d> vmap;
+	
+	
+	
+	depth_map_d.upload(m_depth.data(), dfusion::KINECT_WIDTH * sizeof(dfusion::depthtype),
+		dfusion::KINECT_HEIGHT, dfusion::KINECT_WIDTH);
+	dfusion::createVMap(intr, depth_map_d, vmap_d);
+	dfusion::createNMap(vmap_d, nmap_d);
+
+	std::vector<float4> vlist(dfusion::KINECT_HEIGHT*dfusion::KINECT_WIDTH);
+	std::vector<float4> nlist(dfusion::KINECT_HEIGHT*dfusion::KINECT_WIDTH);
+
+	std::vector<dfusion::PixelRGBA> normal_image(dfusion::KINECT_HEIGHT*dfusion::KINECT_WIDTH);
+
+	dfusion::generateNormalMap(nmap_d, color_map_d);
+	color_map_d.download(normal_image.data(), dfusion::KINECT_WIDTH * sizeof(dfusion::PixelRGBA));
+	//QByteArray qba_normal_image(normal_image.data(), sizeof(normal_image));
+	//m_normal_show_image.loadFromData((char*)normal_image.data());
+	
+	for (int y = 0; y < m_normal_show_image.height(); y++)
+		for (int x = 0; x < m_normal_show_image.width(); x++)
+		{
+			int i_pixel = y*m_normal_show_image.width() + x;
+			QRgb c;
+			c = qRgba(
+				normal_image[i_pixel].r,
+				normal_image[i_pixel].g,
+				normal_image[i_pixel].b,
+				normal_image[i_pixel].a
+			);
+			m_normal_show_image.setPixel(x, y, c);
+		}
+	
+	
+	/*std::vector<Eigen::Vector3d> vmap;
 	std::vector<Eigen::Vector3d> nmap;
 	calVMAP(m_depth, vmap);
 	calNMAP(vmap, nmap);
@@ -108,7 +153,7 @@ void ScanningDataHolder::getNormalShowImage()
 				);
 			}
 			m_normal_show_image.setPixel(x, y, c);
-		}
+		}*/
 }
 
 void ScanningDataHolder::calVMAP(std::vector< dfusion::depthtype> &depth_map, std::vector<Eigen::Vector3d> &vmap)

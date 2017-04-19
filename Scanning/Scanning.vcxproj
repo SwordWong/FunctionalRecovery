@@ -67,16 +67,16 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath>$(SolutionDir)\algorithm\KinectFusion;$(SolutionDir)\algorithm\ldpMat;$(SolutionDir)\algorithm\camera;$(SolutionDir)\algorithm;$(KINECTSDK10_DIR)\inc;$(IncludePath)</IncludePath>
-    <LibraryPath>$(KINECTSDK10_DIR)\lib\amd64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\algorithm\KinectFusion;$(SolutionDir)\algorithm\ldpMat;$(SolutionDir)\algorithm\camera;$(SolutionDir)\algorithm\FreeImage;$(SolutionDir)\algorithm\Renderable;$(SolutionDir)\algorithm;$(SolutionDir)\GL;$(KINECTSDK10_DIR)\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\GL\lib\x64;$(SolutionDir)\algorithm\FreeImage;$(KINECTSDK10_DIR)\lib\amd64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath>$(SolutionDir)\algorithm\KinectFusion;$(SolutionDir)\algorithm\ldpMat;$(SolutionDir)\algorithm\camera;$(SolutionDir)\algorithm;$(KINECTSDK10_DIR)\inc;$(IncludePath)</IncludePath>
-    <LibraryPath>$(KINECTSDK10_DIR)\lib\amd64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\algorithm\KinectFusion;$(SolutionDir)\algorithm\ldpMat;$(SolutionDir)\algorithm\camera;$(SolutionDir)\algorithm\FreeImage;$(SolutionDir)\algorithm\Renderable;$(SolutionDir)\algorithm;$(SolutionDir)\GL;$(KINECTSDK10_DIR)\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\GL\lib\x64;$(SolutionDir)\algorithm\FreeImage;$(KINECTSDK10_DIR)\lib\amd64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -105,7 +105,7 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -137,7 +137,7 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -145,6 +145,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\algorithm\FreeImage\CFreeImage.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\CudaUtil.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\device_memory.cpp" />
+    <ClCompile Include="..\algorithm\KinectFusion\kinect_util.cpp" />
+    <ClCompile Include="..\algorithm\Renderable\AbstractMesh.cpp" />
+    <ClCompile Include="..\algorithm\Renderable\bmesh.cpp" />
+    <ClCompile Include="..\algorithm\Renderable\BoneMesh.cpp" />
+    <ClCompile Include="..\algorithm\Renderable\GLNode.cpp" />
+    <ClCompile Include="..\algorithm\Renderable\ObjMesh.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_scanning.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
@@ -209,6 +218,20 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\algorithm\FreeImage\CFreeImage.h" />
+    <ClInclude Include="..\algorithm\FreeImage\FreeImage.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\device_array.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\device_memory.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\device_utils.h" />
+    <ClInclude Include="..\algorithm\KinectFusion\kinect_util.h" />
+    <ClInclude Include="..\algorithm\Renderable\AbstractMesh.h" />
+    <ClInclude Include="..\algorithm\Renderable\bmesh.h" />
+    <ClInclude Include="..\algorithm\Renderable\bmesh_private.h" />
+    <ClInclude Include="..\algorithm\Renderable\BoneMesh.h" />
+    <ClInclude Include="..\algorithm\Renderable\Error.h" />
+    <ClInclude Include="..\algorithm\Renderable\GLNode.h" />
+    <ClInclude Include="..\algorithm\Renderable\ObjMesh.h" />
+    <ClInclude Include="..\algorithm\Renderable\Renderable.h" />
     <ClInclude Include="GeneratedFiles\ui_scanning.h" />
     <ClInclude Include="Kinect.h" />
     <ClInclude Include="ScanningDataHold.h" />
@@ -232,6 +255,12 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\algorithm\KinectFusion\kinect_util.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\algorithm\FreeImage\FreeImage.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -11,7 +11,13 @@ class FunctionalRecovery : public QMainWindow
 public:
 	FunctionalRecovery(QWidget *parent = 0);
 	~FunctionalRecovery();
-
+public slots:
+	void clicked_pb_load_mesh();
+	void clicked_pb_oversegement();
+protected:
+	
+private:
+	void connectEvent();
 private:
 	Ui::FunctionalRecoveryClass ui;
 };

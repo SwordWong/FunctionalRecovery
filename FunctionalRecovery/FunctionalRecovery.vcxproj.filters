@@ -33,6 +33,24 @@
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="algorithm">
+      <UniqueIdentifier>{eb0b8007-cf27-4328-8289-a357fc2c484b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="algorithm\Renderable">
+      <UniqueIdentifier>{47b10e76-0b65-4ef9-a7a5-fc6852da95f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="algorithm\FreeImage">
+      <UniqueIdentifier>{a938d19d-e535-44e7-ba53-055964fa0b0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="algorithm\camera">
+      <UniqueIdentifier>{5ce2fbce-5b4a-4ae8-93d5-919fe96f77e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Viewers">
+      <UniqueIdentifier>{50c892ad-f3e4-4594-9dad-cb377d9a3409}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="algorithm\Oversegement">
+      <UniqueIdentifier>{9c17aefb-e72a-40f3-b22d-f066db412594}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -50,6 +68,42 @@
     <ClCompile Include="GeneratedFiles\qrc_functionalrecovery.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\algorithm\Renderable\AbstractMesh.cpp">
+      <Filter>algorithm\Renderable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\algorithm\Renderable\bmesh.cpp">
+      <Filter>algorithm\Renderable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\algorithm\Renderable\BoneMesh.cpp">
+      <Filter>algorithm\Renderable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\algorithm\Renderable\GLNode.cpp">
+      <Filter>algorithm\Renderable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\algorithm\Renderable\ObjMesh.cpp">
+      <Filter>algorithm\Renderable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\algorithm\FreeImage\CFreeImage.cpp">
+      <Filter>algorithm\FreeImage</Filter>
+    </ClCompile>
+    <ClCompile Include="FunctionRecoveryDataHolder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\algorithm\camera\Camera.cpp">
+      <Filter>algorithm\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_meshviewer.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_meshviewer.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="meshviewer.cpp">
+      <Filter>Viewers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\algorithm\Oversegement\Oversegement.cpp">
+      <Filter>algorithm\Oversegement</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="functionalrecovery.h">
@@ -61,10 +115,55 @@
     <CustomBuild Include="functionalrecovery.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="meshviewer.hpp">
+      <Filter>Viewers</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_functionalrecovery.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\algorithm\Renderable\AbstractMesh.h">
+      <Filter>algorithm\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\algorithm\Renderable\bmesh.h">
+      <Filter>algorithm\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\algorithm\Renderable\bmesh_private.h">
+      <Filter>algorithm\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\algorithm\Renderable\BoneMesh.h">
+      <Filter>algorithm\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\algorithm\Renderable\Error.h">
+      <Filter>algorithm\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\algorithm\Renderable\GLNode.h">
+      <Filter>algorithm\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\algorithm\Renderable\ObjMesh.h">
+      <Filter>algorithm\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\algorithm\Renderable\Renderable.h">
+      <Filter>algorithm\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\algorithm\FreeImage\CFreeImage.h">
+      <Filter>algorithm\FreeImage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\algorithm\FreeImage\FreeImage.h">
+      <Filter>algorithm\FreeImage</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionRecoveryDataHolder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\algorithm\camera\Camera.h">
+      <Filter>algorithm\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\algorithm\camera\fmath.h">
+      <Filter>algorithm\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\algorithm\Oversegement\Oversegement.h">
+      <Filter>algorithm\Oversegement</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
